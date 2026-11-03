@@ -1,10 +1,10 @@
-# renovate-common
+# renovate-config
 
 Shared [Renovate](https://docs.renovatebot.com/) preset for MaterializeInc repos.
 
 ```json
 {
-  "extends": ["github>MaterializeInc/renovate-common"],
+  "extends": ["github>MaterializeInc/renovate-config"],
   "constraints": { "rust": "1.99.1" }
 }
 ```
