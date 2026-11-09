@@ -28,6 +28,12 @@
       "constraintsFiltering": "strict"
     },
     {
+      "description": "Renovate reads Docker release timestamps only from Docker Hub, so minimumReleaseAge cannot hold back images from other registries. timestamp-optional lets them through anyway, and adds a warning under Repository problems on every run. The patterns mirror how Renovate picks the registry: a first path segment containing '.' or ':' names one, and docker.io, index.docker.io and registry-1.docker.io are Docker Hub.",
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["/^[^/]*[.:][^/]*\\//", "!/^((index|registry-1)\\.)?docker\\.io\\//"],
+      "minimumReleaseAge": null
+    },
+    {
       "description": "Move every Rust toolchain reference (rust image, rust-toolchain.toml, rust-version, CI toolchain, constraints.rust) together. All resolve against the Docker Hub rust tags so only versions the builder image has are proposed. Must come after the non-breaking rule so this groupName wins.",
       "matchDatasources": ["docker"],
       "matchPackageNames": ["rust"],
