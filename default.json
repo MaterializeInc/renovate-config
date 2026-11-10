@@ -62,12 +62,12 @@
   "customManagers": [
     {
       "customType": "regex",
-      "description": "Rust toolchain version in rust-toolchain.toml, Cargo.toml rust-version, CI toolchain refs/inputs, and constraints.rust in renovate.json.",
+      "description": "Rust toolchain version in rust-toolchain.toml, Cargo.toml rust-version, CI toolchain refs/inputs, and constraints.rust in renovate.json or renovate.json5, at the root or in .github/. The \"rust\" key must be quoted.",
       "managerFilePatterns": [
         "/(^|/)rust-toolchain\\.toml$/",
         "/(^|/)Cargo\\.toml$/",
         "/^\\.github/workflows/[^/]+\\.ya?ml$/",
-        "/^renovate\\.json$/"
+        "/^(\\.github/)?renovate\\.json5?$/"
       ],
       "matchStrings": [
         "channel\\s*=\\s*\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\"",
